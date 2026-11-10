@@ -1,0 +1,60 @@
+{
+  "name": "@bizkit.io/privacypass",
+  "version": "1.0.0",
+  "description": "Privacy pass implementation for bizkit.io.",
+  "homepage": "https://github.com/bizkit-io/privacypass#readme",
+  "bugs": {
+    "url": "https://github.com/bizkit-io/privacypass/issues"
+  },
+  "license": "MIT",
+  "author": "bizkit.io <dev@bizkit.io>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bizkit-io/privacypass.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown --env-file .env",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp",
+    "prepublishOnly": "pnpm run build",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
+  },
+  "dependencies": {
+    "@noble/curves": "^2.4.0",
+    "@noble/hashes": "^2.4.0",
+    "quicvarint": "^0.2.1",
+    "valibot": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "bumpp": "^12.3.0",
+    "oxfmt": "^0.78.0",
+    "oxlint": "^1.93.0",
+    "oxlint-tsgolint": "^7.0.2006",
+    "tsdown": "^0.23.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "inlinedDependencies": {
+    "@noble/curves": "2.4.0",
+    "@noble/hashes": "2.4.0",
+    "quicvarint": "0.2.1",
+    "valibot": "1.5.0"
+  }
+}
